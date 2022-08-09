@@ -12,10 +12,7 @@ char *_getline(void)
 
 	len_string = getline(&line, &bufsize, stdin);
 	if (len_string == -1)
-	{
-		printf("\n");
 		exit(0);
-	}
 	return (line);
 }
 /**
