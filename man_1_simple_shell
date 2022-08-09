@@ -1,0 +1,211 @@
+.Dd 07/08/2022
+
+.Dt simple_shell 1
+
+.Os Linux
+
+.Sh NAME
+
+.Nm simple_shell
+
+.Nd simple_shell is an command language interpreter that executes commands\
+
+from the standard input or like result of another command.
+
+.Sh SYNOPSIS
+
+.Nm
+
+.Op Fl command
+
+args ...
+
+.Sh DESCRIPTION
+
+.Nm simple shell (hsh)
+
+is a command language interpreter that shall execute commands read from a \
+
+command line string and the standard input.
+
+.Nm
+
+program was build using the C language, and was designed to interact with a \
+
+linux distribution or unix like system that uses system calls and other \
+
+commands found in the linux PATH.
+
+.Pp
+
+.B
+
+$PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin/ls
+
+.Pp
+
+.Fl Overview
+
+.It
+
+simple_shell reads lines from standard input, interprets them, and generally executes.
+
+.Pp
+
+.Fl Invocation
+
+.It
+
+first compile using flags: gcc -Wall -Werror -Wextra -pedantic *.c -o hsh \
+
+and after that runs the executable file created, called: ./hsh.
+
+.Pp
+
+.Fl Argument list processing
+
+.It
+
+hsh reads a entire line, and assumed that the first argument read from standard\
+
+input is the command and following arguments are it's parameters.
+
+.Pp
+
+.Fl sample commands
+
+.It
+
+$ ls
+
+.br
+
+AUTHORS main.c execute.c hsh man_1_simple_shell chek_path.c_old
+
+.br
+
+README.md compile shell.h main.c chek_path.c split_string.c
+
+.br
+
+.Pp
+
+.Fl Word Expansions
+
+.It
+
+We don't handle word expansion on this project.
+
+.Pp
+
+.Sh EXIT STATUS
+
+Exit status is the return of the last command executed on simple_shell, if the \
+
+last command is successfull then return zero, otherwise return the macro defined\
+
+EXIT_FAILURE.
+
+.Pp
+
+.Sh Environment
+
+This simple_shell only works with the ENV (enviroment) variable, that is an \
+
+array of strings, wich contains the path to programs or files that shell uses,\
+
+by convention these strings have the form 'name=value', are separated by ':'.
+
+.Pp
+
+.Sh FILES
+
+.It
+
+.B
+
+AUTHORS - this file contains a list of contributors of this project.
+
+.It
+
+.B
+
+execute.c - this file perform operations of execute commands on simple_shell.
+
+.It
+
+.B
+
+main.h - file contains all prototypes of functions that we used.
+
+.It
+
+.B
+
+.It
+
+.B
+
+man_1_simple_shell - this file
+
+.It
+
+.B
+
+main.h - file that contains the call to prompt and catch the user input.
+
+.It
+
+.B
+
+README.md - file contains a brief description of how works the simple_shell.
+
+.It
+
+.B
+
+chek_path.c - file used to find the valid path to commands that \
+
+need to be executed.
+
+.It
+
+.B
+
+split_string.c - file contains the routines to split the user input in commands.
+
+.It
+
+.B
+
+.It
+
+.B
+
+
+
+.Pp
+
+.Sh BUGS
+
+We have some memory leaks on our project, and we have some functions that exceed \
+
+the limit of lines.
+
+.Pp
+
+.Sh AUTHORS
+
+.Pp
+
+.It
+
+Wilson Valer
+
+.It
+
+Iver Sutizal
+
+.Pp
+
+City: HOLBERTON PERÚ
