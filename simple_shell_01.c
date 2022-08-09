@@ -12,7 +12,10 @@ char *_getline(void)
 
 	len_string = getline(&line, &bufsize, stdin);
 	if (len_string == -1)
+	{
+		printf("\n");
 		exit(0);
+	}
 	return (line);
 }
 /**
@@ -47,7 +50,8 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 	while (1)
 	{
 		cont++;
-		printf("Will-># ");
+		if (isatty(STDIN_FILENO) == 1)
+			printf("Will-># ");
 		line = _getline();
 
 		if (!strcmp(line, "\n"))
