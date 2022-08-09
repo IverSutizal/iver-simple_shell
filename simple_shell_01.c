@@ -12,7 +12,10 @@ char *_getline(void)
 
 	len_string = getline(&line, &bufsize, stdin);
 	if (len_string == -1)
+	{	
+		free(line);
 		exit(0);
+	}
 	return (line);
 }
 /**
@@ -54,7 +57,7 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 		if (!strcmp(line, "\n"))
 			continue;
 
-		buffer = calloc(strlen(line) + 1, sizeof(char));
+		buffer = calloc(strlen(line), sizeof(char));
 		k = strlen(line) - 1;
 		strncpy(buffer, line, k);
 		token = split_command(line);
@@ -65,7 +68,10 @@ int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
 			continue;
 		}
 		if (!strncmp(token[0], "exit", 4))
+		{
+			free(token), free(line), free(buffer);
 			return (0);
+		}
 
 		if (line[0] != '/')
 			_fork(token, buffer);
