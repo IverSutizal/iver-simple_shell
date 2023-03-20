@@ -1,5 +1,5 @@
 # How to create a Shell Script?
-<h1 align ="center"> <img src="https://ml.globenewswire.com/Resource/Download/a08e6c28-55be-44c8-8461-03544f094b38" height="40%" width="30%"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/fdb7246b-92e5-4075-a409-7bf063232e08/dasmbdb-b75a3bb1-b481-41a2-9cb1-1ddc06ef5be4.png" height="90%" width="70%"></h1>
+<h1 align ="center"> <img src="" height="40%" width="30%"> <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/fdb7246b-92e5-4075-a409-7bf063232e08/dasmbdb-b75a3bb1-b481-41a2-9cb1-1ddc06ef5be4.png" height="90%" width="70%"></h1>
 
 ## Description
 A simple UNIX command interpreter. mini_shell is the user interface to communicate with the operative system services.
